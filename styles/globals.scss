@@ -1,9 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer {
-  .clay-shadow {
-    box-shadow: none;
+$bgColor: #0f172a;
+
+@font-face {
+  font-family: GoodTime;
+  src: url('../public/assets/GoodTiming.ttf') format('opentype');
+}
+
+.bg-slate-900 {
+  background-color: rgb(15 23 42);
+}
+
+html.scrollbar ::-webkit-scrollbar {
+  background-color: transparent;
+  width: 16px;
+}
+
+html.scrollbar ::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+html.scrollbar ::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 5px solid $bgColor;
+}
+html.scrollbar ::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 5px solid $bgColor;
+}
+
+html.scrollbar ::-webkit-scrollbar-button {
+  display: none;
+}
+
+body {
+  font: 14px Poppins, Futura, sans-serif;
+  color: white;
+}
+
+.text-goodtime {
+  font-family: GoodTime;
+}
+
+.text-shadow-white {
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+.search-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .search-input input {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
+}
+
+.search-input form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input input {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  display: block;
+  padding: 0.5rem;
+  padding-left: 2rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #1e293b;
+  --tw-border-opacity: 1;
+  color: white;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  box-shadow: inset 0 1px 0 0 hsl(0deg 0% 100% / 5%);
+}
+.search-input input::placeholder {
+  color: #9ca3af;
+}
+
+.search-input input:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-color: #38bdf8;
+}
+
+input[type='search']::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-input .ais-SearchBox-submit {
+  position: absolute;
+  display: flex;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  align-items: center;
+  padding-left: 0.75rem;
+  pointer-events: none;
+}
+
+.search-input .ais-SearchBox-reset,
+.search-input .ais-SearchBox-loader {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  align-items: center;
+  padding-right: 1.25rem;
+  fill: black;
+  font-size: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.text-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.game-bg::after {
+  background-image: linear-gradient(
+    rgba(15, 23, 42, 0.8) 0%,
+    rgba(15, 23, 42, 0.8) 7%,
+    rgba(15, 23, 42, 0.4) 50%,
+    rgba(15, 23, 42, 1) 93%,
+    rgba(15, 23, 42, 1) 100%
+  );
+}
+
+.inline-rounded-md * {
+  border-radius: 0.375rem;
+}
+
+.menu-shadow {
+  background-image: linear-gradient(rgba(15, 23, 42, 1) 0%, rgba(15, 23, 42, 1) 80%, rgba(15, 23, 42, 0) 100%);
+}
+
+.tutorial-icon {
+  transform: rotate(0deg);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.tutorial-icon.show {
+  transform: rotate(180deg);
 }
