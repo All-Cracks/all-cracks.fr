@@ -28,7 +28,7 @@ export function Provider({ children }: React.PropsWithChildren) {
     console.log('fetching game');
     setState({ loading: true, success: false });
     axios
-      .get<APIResponse>(`/api/games/selector`)
+      .get<APIResponse>(`/api/games`)
       .then((r) => {
         console.log(r.data);
         if (r.data.success) {
