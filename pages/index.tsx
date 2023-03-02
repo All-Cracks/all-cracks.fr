@@ -4,7 +4,7 @@ import config from 'lib/config';
 import Buttons from 'components/Buttons';
 import Tilt from 'react-tilty';
 import ContentLoader from 'react-content-loader';
-import Palette from 'react-palette';
+// import Palette from 'react-palette';
 import Head from 'next/head';
 import { useGames } from '@/lib/gameContext';
 
@@ -35,7 +35,7 @@ export default function Home() {
                   <div className="flex flex-row rounded-lg" key={games[i]._id} id={games[i]._id + '-container'}>
                     {/* style={{ backgroundColor: data.darkVibrant || '#334155' }}> */}
                     <div className="block w-[180px]">
-                      <Link href={`/game/${games[i]._id}`} className="w-[180px]">
+                      <Link href={`/games/${games[i]._id}`} className="w-[180px]">
                         <Tilt max={12.5} speed={400} scale={1.07} reverse={true}>
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
@@ -51,11 +51,11 @@ export default function Home() {
                       </Link>
                     </div>
                     <div className="relative flex flex-col whitespace-normal px-10 py-6 md:justify-between">
-                      <Link href={`/game/${games[i]._id}`} className="text-lg">
+                      <Link href={`/games/${games[i]._id}`} className="text-lg">
                         {games[i].name}
                       </Link>
                       <p className="text-description text-sm">{games[i].description}</p>
-                      <Link href={`/game/${games[i]._id}`} className="rounded-lg bg-slate-200 px-2 py-1 text-black">
+                      <Link href={`/games/${games[i]._id}`} className="rounded-lg bg-slate-200 px-2 py-1 text-black">
                         Découvrir <i className="fa-solid fa-arrow-right"></i>
                       </Link>
                     </div>

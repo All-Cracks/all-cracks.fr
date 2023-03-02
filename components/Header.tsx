@@ -47,11 +47,11 @@ export default function Header() {
       }
       if (dropdownItems) {
         dropdownItems.pop();
-        games.forEach((e: APIGame) => {
+        [0, 1, 2, 3, 4].forEach((i) => {
           dropdownItems?.push({
             type: 'link',
-            name: e.name,
-            href: '/game/' + e._id,
+            name: games[i].name,
+            href: '/games/' + games[i]._id,
           });
         });
       }
