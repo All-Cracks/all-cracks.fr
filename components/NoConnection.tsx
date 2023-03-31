@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function NoConnection({ retry }: { retry: () => void }) {
+export default function NoConnection({ retry }: { retry: () => void }) {
   return (
     <div className="my-20 text-center">
       <div>
