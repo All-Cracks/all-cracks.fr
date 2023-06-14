@@ -6,7 +6,7 @@ import Tilt from 'react-tilty';
 import ContentLoader from 'react-content-loader';
 // import Palette from 'react-palette';
 import Head from 'next/head';
-import { useGames } from '@/lib/gameContext';
+import { useGames } from 'lib/gameContext';
 import Palette from 'react-palette';
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
       </Head>
       <div className="items-center text-center">
         <FirstPage />
-        <div className="w-full bg-gradient-to-tr from-green-200 to-blue-200  py-20">
+        <div className="w-full bg-gradient-to-tr from-green-200 to-blue-200 py-20">
           <h1 className="text-2xl font-semibold text-slate-800">Nos dernières sorties :</h1>
           <div className="mt-10 flex flex-col items-center justify-evenly md:flex-row lg:mx-10">
             {state.success && games ? (

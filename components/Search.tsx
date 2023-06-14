@@ -3,13 +3,12 @@ import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, Configure, Highlight, useHits } from 'react-instantsearch-hooks-web';
 import { BaseHit } from 'instantsearch.js';
 import Link from 'next/link';
-import config from 'lib/config';
 import { Oval } from 'react-loader-spinner';
 import { APIGame } from 'lib/types';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 
-const searchClient = algoliasearch(config.searchId, config.searchKey);
+const searchClient = algoliasearch(process.env.ALGOLIA_SEARCH_ID as string, process.env.ALGOLIA_SEARCH_KEY as string);
 
 interface inputEvent extends FormEvent<HTMLInputElement> {
   target: HTMLInputElement;
